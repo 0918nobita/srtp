@@ -1,11 +1,7 @@
-/// リストを結合する
-let rec append xs ys =
-    match xs with
-    | [] -> ys
-    | x :: xs' -> x :: (append xs' ys)
+let inline plus (x : ^a) (y : ^b) =  x + y
 
 [<EntryPoint>]
 let main argv =
-    printfn "%A" <| append [1; 2; 3] [4; 5; 6] // => [1; 2; 3; 4; 5; 6]
-    printfn "%A" <| append [true; false] [true] // => [true; false; true]
+    printfn "%d" <| plus 4 3 // => 7
+    printfn "%s" <| plus "Hello, " "world!" // => Hello, world!
     0
